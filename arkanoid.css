@@ -1,0 +1,112 @@
+*{
+	font-family: sans-serif;
+}
+
+canvas{
+	border: 2px solid black;
+}
+
+#contenedor{
+	width: 575px;
+	height: 604px;
+	margin: 0 auto;
+	position: relative;
+	background: url(img/fondo3.jpg) repeat;
+}
+
+
+.textOculto{
+	position: absolute;
+	width: 150px;
+	height: 75px;
+	border: 1px solid black;
+	top: 225px;
+	left: 135px;
+	display: none;
+	background-color: #E8E8E8;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#info{
+	width: 150px;
+	height: 602px;
+	/*background: -webkit-linear-gradient(#0000A0, #BBBBFF);*/
+	border: 1px solid black;
+	position: absolute;
+	display: inline;
+}
+
+#info div{
+	background-color: white;
+	width: 80px;
+	height: 15px;
+	border: 1px solid black;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+	border-radius: 10px;
+	top: 50px;
+	margin: 0 auto;
+}
+
+#info h3{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	color: white;
+	top: 60px;
+}
+
+#info select{
+	position: relative;
+	top: 100px;
+	width: 90%;
+	margin: 5%;
+}
+
+#info select+button{
+	position: relative;
+	top: 100px;
+	width: 90%;
+	margin: 5%;
+}
+
+#instrucciones{
+	width: 85%;
+	text-align: justify;
+	background-color: white;
+	margin: auto;
+	font-size: .7em;
+	padding: 3px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+details{
+	position: relative;
+	top: 100px;
+}
+
+summary{
+	margin: 5px;
+	padding: 3px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background-color: white;
+	font-size: .8em;
+}
+
+button{
+	border: none;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: black;
+	margin: 5px;
+	color: white;
+}
+
+button:hover{
+	color: black;
+	background-color: #7D7D7D;
+}

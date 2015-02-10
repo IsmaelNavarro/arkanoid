@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>ARKANOID DAW</title>
+		<link rel="stylesheet" href="arkanoid.css"/>
+		<script type="text/javascript" src="js/requestAnimationFrame.js"></script>
+		<script type="text/javascript" src="js/Vector.js"></script>
+		<script type="text/javascript" src="js/Jugador.js"></script>
+		<script type="text/javascript" src="js/Pelota.js"></script>
+		<script type="text/javascript" src="js/Ladrillo.js"></script>
+		<script type="text/javascript" src="js/TextoFlotante.js"></script>
+		<script type="text/javascript" src="js/Arkanoid.js"></script>
+		
+        
+       
+        <script>
+
+        	window.onload = function() {
+				
+				arkanoid = new Arkanoid("1");
+
+			};
+
+			function continuar () {
+				arkanoid.paused = false;
+				document.getElementById('pausa').style.display = "none";
+			}
+
+			function reiniciar(){
+				borraArkanoid();
+				var nivel = document.getElementById('nivel').value;
+				arkanoid = new Arkanoid(nivel);
+				document.getElementById('pausa').style.display = "none";
+				document.getElementById('fin').style.display = "none";
+			}
+
+			function cambiaNivel(){
+
+				borraArkanoid();
+				var nivel = document.getElementById('nivel').value;
+				arkanoid = new Arkanoid(nivel);
+			}
+
+			/* Si no borramos todas las variables del arkanoid antes de crear un nuevo mapa 
+			* se da errores en la ejecucíon del juego al quedarse restos de los objetos en la 
+			* memoria
+			*/
+			function borraArkanoid(){
+				delete arkanoid.pelota;
+				delete arkanoid.jugador;
+
+				for(var i = 0; i < arkanoid.ladrillos.length; i++){
+					delete arkanoid.ladrillos[i];
+				}
+
+				delete arkanoid;
+			}
+
+        </script>
+	</head>
+	
+	<body>
+
+		<div id="contenedor">
+			<canvas id="juego" width="420" height="600"></canvas>
+
+			<div id="info">
+				<h3>PUNTOS</h3>
+				<div id="puntos"></div>
+				<h3>VIDAS</h3>
+				<div id="vidas"></div>
+				<h3>VELOCIDAD</h3>
+				<div id="velocidad"></div>
+
+				<select id="nivel">
+					<option value="1">Nivel 1</option>
+					<option value="2">Nivel 2 - Cara de mario</option>
+				</select>
+
+				<button onclick="cambiaNivel();">Cambia nivel</button>
+
+				<details>
+					<summary>Instrucciones</summary>
+					<p id="instrucciones">
+					Puedes controlar la pala con las flechas izquierda y derecha.
+					Para realizar el saque pulsa la letra Z (saque a la izquierda) o la letra X (saque a la derecha).
+					</p>
+				</details>
+			</div>
+
+			<div id="pausa" class="textOculto">
+				<button onclick="continuar();">Continuar</button>
+				<button onclick="reiniciar();">Reiniciar</button>
+			</div>	
+
+			<div id="fin" class="textOculto">
+				<div></div>
+				<button onclick="reiniciar();">Reiniciar</button>
+			</div>
+		</div>
+
+		
+	</body>
+</html>
