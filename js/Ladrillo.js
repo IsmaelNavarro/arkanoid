@@ -17,7 +17,7 @@ Ladrillo.prototype.draw = function(context) {
 
 		switch(this.estado){
 			case 1:
-				context.fillStyle = "#DDDD00";
+				context.fillStyle = "#2dc928";
 				break;
 			case 2:
 				context.fillStyle = "#CE8E17";
