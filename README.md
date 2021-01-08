@@ -5,6 +5,6 @@ Esta hecho totalmente usando canvas y html sin ninguna librería externa.
 
 Si quieres probarlo puedes acceder a esta página.
 
-http://ismaelnavarro.github.io/arkanoid/
+http://ismanapa.github.io/arkanoid/
 
 Espero que te diviertas y te guste el código =D
